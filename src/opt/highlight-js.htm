@@ -1,0 +1,20 @@
+<lib>
+  <!--- https://highlightjs.org -->
+  <link rel="stylesheet" href="/.kit/bootstrap/res/highlight/styles/atom-one-dark.min.css">
+  <script src="/.kit/bootstrap/res/highlight/highlight.min.js"></script>
+  <!--- <:include src="/.kit/bootstrap/res/highlight/highlight.js" as="script"/> -->
+
+  <:define tag="highlight-js:pre" class="highlight-js"
+           :source=""
+           :lang="[[null]]"
+           :handle-source=[[
+             if (window.hljs) {
+               const res = lang
+                 ? window.hljs.highlight(source, { language: lang })
+                 : window.hljs.highlightAuto(source);
+               __dom.firstElementChild.innerHTML = res.value;
+             } else {
+               __dom.firstElementChild.innerHTML = source.replaceAll('<', '&lt;').replaceAll('\n', '<br>');
+             }
+           ]]><code></code></:define>
+</lib>
