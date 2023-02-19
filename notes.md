@@ -3,3 +3,4 @@
 * [prefers-color-scheme: Hello darkness, my old friend](https://web.dev/prefers-color-scheme/)
 * [We Love Open Source - BrowserStack](https://www.browserstack.com/open-source?ref=pricing)
   * [Percy](https://www.browserstack.com/percy)
+* [Node.js - NPM pacakge publish locally](https://stackoverflow.com/questions/21248884/node-js-npm-pacakge-publish-locally-and-install-the-locally-published-npm-pack)
