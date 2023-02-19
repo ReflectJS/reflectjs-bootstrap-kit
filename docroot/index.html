@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Reflect.js • Bootstrap kit</title>
+    <link rel="icon" href="favicon.svg">
+    <:import src="/.kit/bootstrap/all.htm"/>
+    <:import src="/.kit/bootstrap/opt/marked-js.htm"/>
+    <:import src="/.kit/bootstrap/opt/highlight-js.htm"/>
+    <:import src="/.kit/bootstrap/icons.htm"/>
+  </head>
+  <body>
+    <bs-container><br><bs-card>
+    <marked-js :source=[[`
+## hello there
+
+this is a [markdown](https://daringfireball.net/projects/markdown/syntax) text
+
+\`\`\`html
+<body>
+  <span class="greeting">hi</span>
+</body>
+\`\`\`
+`]]/>
+    </bs-card>
+    </bs-container>
+  </body>
+</html>

@@ -1,14 +1,13 @@
 <lib>
+
   <!--- https://github.com/markedjs/marked -->
-  <!--- https://marked.js.org/using_advanced#highlight -->
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <:import src="../res/marked/marked.min.js" as='script data-name="marked.min.js"'/>
   <script>
     marked.setOptions({
       highlight: function(code, lang, callback) {
-        // require('pygmentize-bundled') ({ lang: lang, format: 'html' }, code, function (err, result) {
-        //   callback(err, result.toString());
-        // });
-        console.log(code, lang);
+        if (window.hljs) {
+          return window.hljs.highlight(code, { language: lang }).value;
+        }
       }
     });
   </script>
@@ -16,4 +15,5 @@
   <:define tag="marked-js" class="marked-js"
     :source=""
     :handle-source=[[__dom.innerHTML = window.marked.parse(source)]]/>
+
 </lib>
